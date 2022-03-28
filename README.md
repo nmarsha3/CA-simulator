@@ -6,6 +6,6 @@ Project Idea: We will be building a software emulator for cellular automata. The
 
 Things to do:
 - Create format to represent the Cellular Automata
-- Be able to read in the CAs from the above format and parse the input to udnerstand it
+- Be able to read in the CAs from the above format and parse the input to understand it
 - Simulate the automata
 - Create a visual representation of that simulation
