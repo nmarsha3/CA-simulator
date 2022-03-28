@@ -1,3 +1,7 @@
+from collections import namedtuple
+
+Cell = namedtuple("Cell", "state next_state output")
+
 class Board:
 
    def __init__(self, neighborhood="von neumann", dimension=1, length=5):
@@ -11,8 +15,7 @@ class Board:
 
    def buildBoard(self, dim, length):
       if dim == 1:
-         #return [FST(params) for i in range(length)]
-         return [0 for i in range(length)]
+         return [Cell(0, 0, 0) for i in range(length)]
       
       return [self.buildBoard(dim-1, length) for i in range(length)]
 
