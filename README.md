@@ -11,4 +11,4 @@ Things to do:
 - Create a visual representation of that simulation
 
 To Clone Paper:
-- [https://git.overleaf.com/6245e38029f0fa7dd160ac25]
+- https://git.overleaf.com/6245e38029f0fa7dd160ac25
