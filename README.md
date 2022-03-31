@@ -14,4 +14,4 @@ To Clone Paper:
 - https://git.overleaf.com/6245e38029f0fa7dd160ac25
 
 First Progress Report:
-- [Link to Google Doc]https://docs.google.com/document/d/1y39QktQpo54GqGPqDYo-eAqYU1BLYIeka3R_D4U9WtE/edit?usp=sharing
+- [Link to Google Doc](https://docs.google.com/document/d/1y39QktQpo54GqGPqDYo-eAqYU1BLYIeka3R_D4U9WtE/edit?usp=sharing)
