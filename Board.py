@@ -30,7 +30,8 @@ class Board:
       # Get dimension, length, init_states, transitions
       self.dimension = data["dimension"]
       self.length = data["length"]
-      init_states = data["init_state"]
+      init_states = data["init_states"]
+      init_outputs = data["init_outputs"]
       self.transitions = data["transitions"]
 
       # Build board in init state
