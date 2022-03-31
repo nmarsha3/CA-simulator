@@ -1,7 +1,0 @@
-{
-    "dimension": 1,
-    "length": 5,
-    "init_state": ["$", "idle", "idle", "idle", "$"],
-    "states": ["$", "Head", "Tail", "idle"],
-    "rules": [[[Your current state], [1, ...], [coordinate of Cell were looking at, its output] ...]]
-}
