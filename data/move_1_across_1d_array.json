@@ -1,7 +1,7 @@
 {
     "dimension": 1,
     "length": 7,
-    "init_state": ["$","idle", "idle", "idle", "idle", "idle", "$"],
+    "init_states": ["$","idle", "idle", "idle", "idle", "idle", "$"],
     "init_outputs": ["$","0", "0", "0", "0", "0", "$"],
     "transitions": [ 
         { 
