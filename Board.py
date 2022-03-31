@@ -10,9 +10,10 @@ class Board:
       self.neighborhood = neighborhood
       self.dimension = dimension
       self.length = length
+      self.transitions = []
 
       # Build the board
-      self.board = self.buildBoard(dimension, length)
+      self.board = self.buildEmptyBoard(dimension, length)
 
    def buildEmptyBoard(self, dim, length):
       if dim == 1:
@@ -22,12 +23,22 @@ class Board:
 
    def buildJsonBoard(self, json_file):
 
+      # Open file
       f = open(json_file)
       data = json.load(f)
 
-      for i in data
+      # Get dimension, length, init_states, transitions
+      self.dimension = data["dimension"]
+      self.length = data["length"]
+      init_states = data["init_state"]
+      self.transitions = data["transitions"]
 
+      # Build board in init state
+      return []
    
+   def iterate():
+      pass
+
    def printBoard(self):
       print(self.board)
 
