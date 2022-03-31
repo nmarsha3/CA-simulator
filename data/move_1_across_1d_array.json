@@ -1,0 +1,73 @@
+{
+    "dimension": 1,
+    "length": 7,
+    "init_state": ["$","idle", "idle", "idle", "idle", "idle", "$"],
+    "states": ["$", "Head", "Tail", "idle"],
+    "transitions": [ 
+        { 
+          "neighbors": [ [-1, "$"], [1, "0"] ],
+          "current_state": "idle",
+          "new_state": "Head",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "0"], [1, "0"] ],
+          "current_state": "idle",
+          "new_state": "idle",
+          "output": "0"
+        },
+        { 
+          "neighbors": [ [-1, "$"], [1, "0"] ],
+          "current_state": "Head",
+          "new_state": "Tail",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "1"], [1, "0"] ],
+          "current_state": "idle",
+          "new_state": "Head",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "1"], [1, "0"] ],
+          "current_state": "Head",
+          "new_state": "Tail",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "1"], [1, "$"] ],
+          "current_state": "Head",
+          "new_state": "Tail",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "1"], [1, "$"] ],
+          "current_state": "Tail",
+          "new_state": "Tail",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "0"], [1, "$"] ],
+          "current_state": "idle",
+          "new_state": "idle",
+          "output": "0"
+        },
+        { 
+          "neighbors": [ [-1, "0"], [1, "$"] ],
+          "current_state": "idle",
+          "new_state": "Head",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "$"], [1, "1"] ],
+          "current_state": "Tail",
+          "new_state": "Tail",
+          "output": "1"
+        },
+        { 
+          "neighbors": [ [-1, "1"], [1, "1"] ],
+          "current_state": "Tail",
+          "new_state": "Tail",
+          "output": "1"
+        }
+}
