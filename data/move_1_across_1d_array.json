@@ -2,7 +2,7 @@
     "dimension": 1,
     "length": 7,
     "init_state": ["$","idle", "idle", "idle", "idle", "idle", "$"],
-    "states": ["$", "Head", "Tail", "idle"],
+    "init_outputs": ["$","0", "0", "0", "0", "0", "$"],
     "transitions": [ 
         { 
           "neighbors": [ [-1, "$"], [1, "0"] ],
