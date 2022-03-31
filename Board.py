@@ -34,9 +34,14 @@ class Board:
       init_outputs = data["init_outputs"]
       self.transitions = data["transitions"]
 
-      # Build board in init state
-      return []
-   
+      def recursive_zip(a,b):
+         if type(a) is not list and type(b) is not list:
+            return Cell(a,'',b)
+         return [recursive_zip(i,j) for i,j in zip(a,b)] 
+      
+      # Build board with initial states and outputs
+      return recursive_zip(init_states, init_outputs)
+      
    def iterate():
       pass
 
