@@ -9,3 +9,6 @@ Things to do:
 - Be able to read in the CAs from the above format and parse the input to understand it
 - Simulate the automata
 - Create a visual representation of that simulation
+
+To Clone Paper:
+- https://git.overleaf.com/6245e38029f0fa7dd160ac25
