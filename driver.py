@@ -1,10 +1,12 @@
 import sys
 
 def main():
+   pass
 
-   # TODO: Parse Cellular Automata from input
-   for line in sys.stdin:
-      print(line)
+   # TODO: Build Board using Board class
+   
+   # TODO: Iterate k times
+   
 
 if __name__ == "__main__":
    main()
