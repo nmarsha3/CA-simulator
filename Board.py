@@ -36,6 +36,15 @@ class Board:
 
       else:
          return str(self.board)
+   
+   def printStates(self):
+      out_str = ''
+      if self.dimension == 1:
+         out_str =  '-'*(4*self.length+1) + '\n'
+         out_str += '| ' + ' | '.join([str(cell[0]) for cell in self.board]) + ' |\n'
+         out_str += '-'*(4*self.length+1)
+      print(out_str)
+         
 
    def buildEmptyBoard(self, dim, length):
       if dim == 1:
