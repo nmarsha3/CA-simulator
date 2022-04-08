@@ -22,15 +22,24 @@ class Board:
    def __str__(self):
 
       if self.dimension == 1:
-         return str(self.board)
+         out_str =  '-'*(4*self.length+1) + '\n'
+         out_str += '| ' + ' | '.join([str(cell[2]) for cell in self.board]) + ' |\n'
+         out_str += '-'*(4*self.length+1)
+         return out_str
+
       elif self.dimension == 2:
-         return str(self.board)
+         out_str =  '-'*(4*self.length+1)
+         for brd in self.board:
+            out_str += '\n| ' + ' | '.join([str(cell[2]) for cell in brd]) + ' |\n'
+            out_str += '-'*(4*self.length+1)
+         return out_str
+
       else:
          return str(self.board)
 
    def buildEmptyBoard(self, dim, length):
       if dim == 1:
-         return [Cell(0, 0, 0) for i in range(length)]
+         return [Cell('0','0','0') for i in range(length)]
       
       return [self.buildEmptyBoard(dim-1, length) for i in range(length)]
    
@@ -103,6 +112,22 @@ class Board:
             
       recursive_iterate(self.board)
       recursive_update(self.board)
+      
+
+   def addBorder(self):
+      '''Adds a border of $ characters around the board, overwriting the outermost cells'''
+
+      def recursive_iterate(brd, idx=[]):
+         if brd.shape == (3,):
+            for i in idx:
+               if i == 0 or i == self.length-1:
+                  self.board[tuple(idx)] = np.asarray(Cell('$','','$'))
+                  break
+         else:
+            for i in range(len(brd)):
+               recursive_iterate(brd[i],idx+[i])
+
+      recursive_iterate(self.board)
 
    def printBoard(self):
       print(self.board)
