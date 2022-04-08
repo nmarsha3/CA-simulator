@@ -6,7 +6,7 @@ Cell = namedtuple("Cell", "state next_state output")
 
 class Board:
 
-   def __init__(self, neighborhood="von neumann", dimension=1, length=5, init_file=None):
+   def __init__(self, neighborhood="von neumann", dimension=1, length=5):
       # Take in variables
       self.neighborhood = neighborhood
       self.dimension = dimension
@@ -14,26 +14,13 @@ class Board:
       self.transitions = []
 
       # Build the board
-      if init_file is not None:
-         self.board = np.asarray(self.buildJsonBoard(init_file))
-      else:
-         self.board = np.asarray(self.buildEmptyBoard(dimension, length))
-
-   def __str__(self):
-      
-      if self.dimension == 1:
-         return str(self.board)
-      elif self.dimension == 2:
-         return str(self.board)
-      else:
-         return str(self.board)
-
+      self.board = self.buildEmptyBoard(dimension, length)
 
    def buildEmptyBoard(self, dim, length):
       if dim == 1:
          return [Cell(0, 0, 0) for i in range(length)]
       
-      return [self.buildEmptyBoard(dim-1, length) for i in range(length)]
+      return np.asarray([self.buildBoard(dim-1, length) for i in range(length)])
 
    def buildJsonBoard(self, json_file):
 
@@ -54,10 +41,19 @@ class Board:
          return [recursive_zip(i,j) for i,j in zip(a,b)] 
       
       # Build board with initial states and outputs
-      return recursive_zip(init_states, init_outputs)
+      self.board = np.asarray(recursive_zip(init_states, init_outputs))
       
-   def iterate():
-      pass
+   def iterate(self):
+
+      def recursive_iterate(brd, idx=[]):
+         if self.dims == (3,):
+            print(tuple(idx), self.board[tuple(idx)])
+         else:
+            for i in range(len(board)):
+               recursive_iterate(brd[i],idx+[i])
+
+      recursive_iterate(self.board)
+
 
    def printBoard(self):
       print(self.board)
@@ -67,5 +63,5 @@ class Board:
    
    def setDimension(self, dimension):
       self.dimension = dimension
-      
-# vim: set sts=3 sw=3 ts=6 expandtab ft=python: 
+
+   
