@@ -1,6 +1,8 @@
 from collections import namedtuple
 import json
 import numpy as np
+from os import system, name
+from time import sleep
 
 Cell = namedtuple("Cell", "state next_state output")
 
@@ -135,7 +137,25 @@ class Board:
             
       recursive_iterate(self.board)
       recursive_update(self.board)
-      
+   
+   def clear(self):
+
+      if name == 'nt':
+         _ = system('cls')
+      else:
+         _ = system('clear')
+
+   def iterations(self, num_times=10):
+
+      self.clear()
+      print(self)
+      sleep(.5)
+      self.clear()
+      for _ in range(num_times):
+         self.iterate()
+         print(self)
+         sleep(.5)
+         self.clear()
 
    def addBorder(self):
       '''Adds a border of $ characters around the board, overwriting the outermost cells'''
