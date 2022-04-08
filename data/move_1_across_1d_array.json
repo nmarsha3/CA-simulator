@@ -29,6 +29,12 @@
           "output": "1"
         },
         { 
+          "neighbors": [ [ [-1], "1"], [ [1], "$"] ],
+          "current_state": "idle",
+          "new_state": "Head",
+          "output": "1"
+        },
+        { 
           "neighbors": [ [ [-1], "1"], [ [1], "0"] ],
           "current_state": "Head",
           "new_state": "Tail",
