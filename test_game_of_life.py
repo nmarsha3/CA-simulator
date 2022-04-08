@@ -2,12 +2,14 @@
 
 from Board import Board
 
-BOARD_FILE = 'data/game_of_life.json'
+BOARD_FILE = 'data/game_of_life_blinker.json'
 
 board = Board(init_file=BOARD_FILE)
 
-print(board)
+board.iterations(50, 0.3)
 
-for i in range(2):
-    board.iterate()
-    print(board)
+BOARD_FILE = 'data/game_of_life_glider.json'
+
+board = Board(init_file=BOARD_FILE)
+
+board.iterations(50, 0.3)
