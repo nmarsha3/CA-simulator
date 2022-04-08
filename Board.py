@@ -145,16 +145,16 @@ class Board:
       else:
          _ = system('clear')
 
-   def iterations(self, num_times=10):
+   def iterations(self, num_times=10, speed=0.5):
 
       self.clear()
       print(self)
-      sleep(.5)
+      sleep(speed)
       self.clear()
       for _ in range(num_times):
          self.iterate()
          print(self)
-         sleep(.5)
+         sleep(speed)
          self.clear()
 
    def addBorder(self):
