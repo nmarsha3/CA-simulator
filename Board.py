@@ -14,7 +14,7 @@ class Board:
       self.transitions = []
 
       # Build the board
-            if init_file is not None:
+      if init_file is not None:
          self.board = np.asarray(self.buildJsonBoard(init_file))
       else:
          self.board = np.asarray(self.buildEmptyBoard(dimension, length))
