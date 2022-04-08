@@ -58,14 +58,51 @@ class Board:
    def iterate(self):
 
       def recursive_iterate(brd, idx=[]):
-         if self.dims == (3,):
-            print(tuple(idx), self.board[tuple(idx)])
+         if brd.shape == (3,):
+            
+            # Dealing with a single cell here
+            cell = self.board[tuple(idx)]
+            
+            cell[1] = cell[2]
+            for transition in self.transitions:
+               transition_current_state = transition["current_state"]
+               if cell[0] != transition_current_state:
+                  continue
+
+               neighbors = transition["neighbors"]
+               do_transition = True
+               for neighbor in neighbors:
+                  neighbor_relative_idx = np.asarray(neighbor[0])
+                  neighbor_transition_output = neighbor[1]
+                  neighbor_idx = np.add(idx, neighbor_relative_idx)
+
+                  neighbor_output = self.board[tuple(neighbor_idx)][2]
+
+                  if neighbor_output != neighbor_transition_output:
+                     do_transition = False
+                     break
+               
+               if do_transition:
+                  cell[0] = transition["new_state"]
+                  cell[1] = transition["output"]
+                  break
+               
+               self.board[tuple(idx)] = cell
+
          else:
-            for i in range(len(board)):
+            for i in range(len(brd)):
                recursive_iterate(brd[i],idx+[i])
 
+      def recursive_update(brd, idx=[]):
+         if brd.shape == (3,):
+            self.board[tuple(idx)][2] = self.board[tuple(idx)][1]
+            self.board[tuple(idx)][1] = ''
+         else:
+            for i in range(len(brd)):
+               recursive_update(brd[i],idx+[i])
+            
       recursive_iterate(self.board)
-
+      recursive_update(self.board)
 
    def printBoard(self):
       print(self.board)
