@@ -12,6 +12,8 @@ class Board:
       self.dimension = dimension
       self.length = length
       self.transitions = []
+      self.default_state = None
+      self.default_output = None
 
       # Build the board
       if init_file is not None:
@@ -65,6 +67,10 @@ class Board:
       init_outputs = data["init_outputs"]
       self.transitions = data["transitions"]
 
+      # check for any defaults
+      self.default_state = data.get('default_state', None)
+      self.default_output = data.get('default_output', None)
+
       def recursive_zip(a,b):
          if type(a) is not list and type(b) is not list:
             return Cell(a,'',b)
@@ -103,9 +109,17 @@ class Board:
                if do_transition:
                   cell[0] = transition["new_state"]
                   cell[1] = transition["output"]
-                  break
+
+                  self.board[tuple(idx)] = cell
+                  return
+
+            # if default has been specified, use that
+            if self.default_state is not None and self.default_output is not None:
+               cell[0] = self.default_state
+               cell[1] = self.default_output
+            
+            self.board[tuple(idx)] = cell
                
-               self.board[tuple(idx)] = cell
 
          else:
             for i in range(len(brd)):

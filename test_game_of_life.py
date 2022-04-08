@@ -8,6 +8,6 @@ board = Board(init_file=BOARD_FILE)
 
 print(board)
 
-for i in range(5):
+for i in range(2):
     board.iterate()
     print(board)
