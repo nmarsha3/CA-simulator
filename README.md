@@ -7,7 +7,7 @@ Project Idea: We will be building a software emulator for cellular automata. The
 Things to do:
 - Create format to represent the Cellular Automata: DONE
 - Be able to read in the CAs from the above format and parse the input and load it into a Board: DONE
-- Simulate the automata using the iterate() method: NEED TO DO
+- Simulate the automata using the iterate() method: DONE
 - Create a visual representation of that simulation: NEED TO DO
 
 To Clone Paper:
