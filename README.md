@@ -11,7 +11,11 @@ In order to execute the code, use the test files we have provided which implemen
 - test_1d.py
 - test_2d.py
 - test_3d.py
-- test_game_of_life.py
+- test_game_of_life_blinker.py 
+- test_game_of_life_chaos.py
+- test_game_of_life_glider.py
+- test_wireworld_inverter_backward.py
+- test_wireworld_inverter_forward.py
 
 Alternatively, you can interface with the Board class directly inside a python shell:
 - ```$ python3```
