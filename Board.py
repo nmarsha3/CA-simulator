@@ -104,7 +104,8 @@ class Board:
 
                   neighbor_output = self.board[tuple(neighbor_idx)][2]
 
-                  if neighbor_output != neighbor_transition_output:
+                  # Check to see if the output matches the one in the rule or the rule accepts any output
+                  if neighbor_output != neighbor_transition_output and neighbor_transition_output != "*":
                      do_transition = False
                      break
                
