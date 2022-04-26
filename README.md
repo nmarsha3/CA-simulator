@@ -8,8 +8,8 @@ Things to do:
 - Create format to represent the Cellular Automata: DONE
 - Be able to read in the CAs from the above format and parse the input and load it into a Board: DONE
 - Simulate the automata using the iterate() method: DONE
-- Create many example Cellular Automata NEED TO DO
-- Create a visual representation of that simulation: NEED TO DO
+- Create many example Cellular Automata DONE
+- Create a visual representation of that simulation: DONE
 
 To Clone Paper:
 - https://git.overleaf.com/6245e38029f0fa7dd160ac25
