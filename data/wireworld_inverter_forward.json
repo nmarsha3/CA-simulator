@@ -1,0 +1,113 @@
+{
+    "dimension": 2,
+    "length": 10,
+	 "default_state": "dead",
+	 "default_output": " ",
+    "init_states": [ ["$","$","$","$","$","$","$","$","$","$"],
+		 					["$","dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "$"],
+		 					["$","dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "$"],
+		 					["$","dead", "dead", "dead", "copper", "copper", "dead", "dead", "dead", "$"],
+		 					["$","head", "copper", "copper", "copper", "dead", "copper", "copper", "copper", "$"],
+		 					["$","dead", "dead", "dead", "copper", "copper", "dead", "dead", "dead", "$"],
+		 					["$","dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "$"],
+		 					["$","dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "$"],
+		 					["$","dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "$"],
+		 					["$","$","$","$","$","$","$","$","$","$"]],
+    "init_outputs": [["$","$","$","$","$","$","$","$","$","$"],
+	 						["$"," "," "," "," "," "," "," "," ","$"],
+	 						["$"," "," "," "," "," "," "," "," ","$"],
+	 						["$"," "," "," ","=","="," "," "," ","$"],
+	 						["$",">","=","=","="," ","=","=","=","$"],
+	 						["$"," "," "," ","=","="," "," "," ","$"],
+	 						["$"," "," "," "," "," "," "," "," ","$"],
+	 						["$"," "," "," "," "," "," "," "," ","$"],
+	 						["$"," "," "," "," "," "," "," "," ","$"],
+		 					["$","$","$","$","$","$","$","$","$","$"]],
+    "transitions": [ 
+        {
+          "neighbors": [[ [ -1, 1], ">"], [[0, 1], ">"], [[1, 1], ">"]],
+          "current_state": "copper",
+          "new_state": "copper",
+          "output": "="
+        },        
+        { 
+          "neighbors": [[ [ -1, -1], ">"]],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [[ [ -1, 0], ">"] ],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [[ [ 1, -1], ">"]],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [[ [ 0,-1], ">"] ],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [[ [ 0, 1], ">"] ],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [[ [ -1, 1], ">"]],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [[ [ 1, 0], ">"] ],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [[ [ 1, 1], ">"]],
+          "current_state": "copper",
+          "new_state": "head",
+          "output": ">"
+        },
+        { 
+          "neighbors": [],
+          "current_state": "tail",
+          "new_state": "copper",
+          "output": "="
+        },
+        { 
+          "neighbors": [],
+			 "current_state": "dead",
+          "new_state": "dead",
+          "output": " "
+        },
+        { 
+          "neighbors": [],
+			 "current_state": "copper",
+          "new_state": "copper",
+          "output": "="
+        },
+        { 
+          "neighbors": [],
+          "current_state": "head",
+          "new_state": "tail",
+          "output": "~"
+        },
+        { 
+          "neighbors": [],
+          "current_state": "$",
+          "new_state": "$",
+          "output": "$"
+        }
+    ]
+}
+
